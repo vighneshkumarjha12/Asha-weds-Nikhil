@@ -1,9 +1,12 @@
-/**
- * Royal Indian Wedding Invitation - Interactive Core Engine
- * Couples: Asha Jha & Nikhil Kumar Jha
- */
+// ============================================================
+// ROYAL INDIAN WEDDING INVITATION
+// Couples: Asha Jha & Nikhil Kumar Jha
+// ============================================================
 
-// Bilingual Translation Dictionary
+// ============================================================
+// 1. BILINGUAL TRANSLATION DICTIONARY
+// ============================================================
+
 const i18nData = {
   hi: {
     navBrand: "आशा संग निखिल",
@@ -17,7 +20,7 @@ const i18nData = {
     curtainPrompt: "शाही निमंत्रण पत्र खोलें",
     curtainSub: "स्पर्श करें एवं मांगलिक धुन का आनंद लें",
     omGanesh: "॥ श्री गणेशाय नमः ॥",
-    shlokaText: "ॐ गजाननं भूतगणादि सेवितं कपित्थजम्बूफलसार भक्षितम्।\nउमासुतं शोकविनाशकारणं नमामि विघ्नेश्वर पादपङ्कजम् ॥",
+    shlokaText: "गजाननं भूत गणादि सेवितं, कपित्थ जम्बू फल चारू भक्षणम् । उमासुतं शोक विनाशकारकम्,नमामि विघ्नेश्वर पाद पंकजम्॥",
     mainTitle: "॥ शुभ विवाह आमंत्रण ॥",
     brideTag: "वधू",
     groomTag: "वर",
@@ -63,6 +66,7 @@ const i18nData = {
     scrollPrompt: "शाही निमंत्रण पत्र खोलने के लिए नीचे स्क्रॉल करें ↓",
     scrollSubPrompt: "Scroll down to unroll the royal invitation"
   },
+
   en: {
     navBrand: "Asha & Nikhil",
     navBlessings: "Invocation",
@@ -123,9 +127,12 @@ const i18nData = {
   }
 };
 
-let currentLang = 'hi';
+let currentLang = "hi";
 
-// Sample Blessings Database
+// ============================================================
+// 2. SAMPLE BLESSINGS DATABASE
+// ============================================================
+
 const defaultBlessings = [
   {
     author: "श्री विनय कांत झा एवं परिवार",
@@ -149,10 +156,15 @@ const defaultBlessings = [
   }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+// ============================================================
+// 3. INITIALIZE WEBSITE
+// ============================================================
+
+document.addEventListener("DOMContentLoaded", () => {
   if (window.weddingAudio) {
     window.weddingAudio.start();
   }
+
   initScrollUnroll();
   initMusicControl();
   initLanguageToggle();
@@ -162,23 +174,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
 });
 
-/* ==========================================================================
-   1. On-Scroll Unrolling Message Board
-   ========================================================================== */
+// ============================================================
+// 4. ON-SCROLL UNROLLING MESSAGE BOARD
+// ============================================================
+
 function initScrollUnroll() {
-  const stage = document.getElementById('scroll-stage');
-  const seal = document.getElementById('rolled-wax-seal');
-  const prompt = document.getElementById('scroll-unroll-prompt');
+  const stage = document.getElementById("scroll-stage");
+  const seal = document.getElementById("rolled-wax-seal");
+  const prompt = document.getElementById("scroll-unroll-prompt");
+
   let audioStarted = false;
   let isUnrolling = false;
 
   function startCelebration() {
     if (!audioStarted) {
       audioStarted = true;
+
       if (window.weddingAudio) {
         window.weddingAudio.start();
         updateMusicButtonUI(true);
       }
+
       if (window.particleCanvas) {
         window.particleCanvas.triggerFlowerShower(20);
       }
@@ -187,62 +203,70 @@ function initScrollUnroll() {
 
   function setUnrollProgress(progress) {
     if (!stage) return;
-    const clamped = Math.min(1, Math.max(0, progress));
-    stage.style.setProperty('--unroll-progress', clamped);
 
-    if (clamped >= 0.90) {
-      stage.classList.add('unrolled');
+    const clamped = Math.min(1, Math.max(0, progress));
+    stage.style.setProperty("--unroll-progress", clamped);
+
+    if (clamped >= 0.9) {
+      stage.classList.add("unrolled");
     } else {
-      stage.classList.remove('unrolled');
+      stage.classList.remove("unrolled");
     }
   }
 
-  // Smoothly animated unroll sequence
   function animateToFullUnroll(targetScroll = 0) {
     if (!stage) return;
-    if (stage.classList.contains('unrolled')) {
+
+    if (stage.classList.contains("unrolled")) {
       if (targetScroll > 0) {
-        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        window.scrollTo({ top: targetScroll, behavior: "smooth" });
       }
       return;
     }
 
     startCelebration();
+
     if (isUnrolling) return;
     isUnrolling = true;
 
     let start = null;
-    const currentProg = parseFloat(stage.style.getPropertyValue('--unroll-progress')) || 0;
-    const duration = 650; // ms
+
+    const currentProg =
+      parseFloat(stage.style.getPropertyValue("--unroll-progress")) || 0;
+
+    const duration = 650;
 
     function step(timestamp) {
       if (!start) start = timestamp;
+
       const elapsed = timestamp - start;
       const t = Math.min(1, elapsed / duration);
-      // Ease out cubic
       const ease = 1 - Math.pow(1 - t, 3);
       const prog = currentProg + (1 - currentProg) * ease;
+
       setUnrollProgress(prog);
 
       if (t < 1) {
         requestAnimationFrame(step);
       } else {
         setUnrollProgress(1);
-        stage.classList.add('unrolled');
+        stage.classList.add("unrolled");
         isUnrolling = false;
+
         if (targetScroll > 0) {
           setTimeout(() => {
-            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+            window.scrollTo({ top: targetScroll, behavior: "smooth" });
           }, 60);
         }
       }
     }
+
     requestAnimationFrame(step);
   }
 
-  // 1. Native Window Scroll handler
   function updateUnrollProgress() {
     if (isUnrolling) return;
+
     const scrollY = window.scrollY || window.pageYOffset;
     const threshold = 320;
     const progress = Math.min(1, Math.max(0, scrollY / threshold));
@@ -254,80 +278,104 @@ function initScrollUnroll() {
     }
   }
 
-  window.addEventListener('scroll', updateUnrollProgress, { passive: true });
+  window.addEventListener("scroll", updateUnrollProgress, {
+    passive: true
+  });
+
   updateUnrollProgress();
 
-  // 2. Mouse Wheel Handler - Unrolls instantly on wheel down
-  window.addEventListener('wheel', (e) => {
-    if (!stage || stage.classList.contains('unrolled')) return;
-    if (e.deltaY > 0) {
-      // User is scrolling down
-      startCelebration();
-      const currentProg = parseFloat(stage.style.getPropertyValue('--unroll-progress')) || 0;
-      const nextProg = currentProg + Math.max(0.22, Math.abs(e.deltaY) * 0.0035);
-      if (nextProg >= 0.85) {
-        animateToFullUnroll();
-      } else {
-        setUnrollProgress(nextProg);
-      }
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "wheel",
+    (e) => {
+      if (!stage || stage.classList.contains("unrolled")) return;
 
-  // 3. Touch Gestures (Mobile Swipe)
+      if (e.deltaY > 0) {
+        startCelebration();
+
+        const currentProg =
+          parseFloat(stage.style.getPropertyValue("--unroll-progress")) || 0;
+
+        const nextProg =
+          currentProg + Math.max(0.22, Math.abs(e.deltaY) * 0.0035);
+
+        if (nextProg >= 0.85) {
+          animateToFullUnroll();
+        } else {
+          setUnrollProgress(nextProg);
+        }
+      }
+    },
+    { passive: true }
+  );
+
   let touchStartY = 0;
-  window.addEventListener('touchstart', (e) => {
-    if (e.touches && e.touches.length > 0) {
-      touchStartY = e.touches[0].clientY;
-    }
-  }, { passive: true });
 
-  window.addEventListener('touchmove', (e) => {
-    if (!stage || stage.classList.contains('unrolled')) return;
-    if (e.touches && e.touches.length > 0) {
-      const touchY = e.touches[0].clientY;
-      const deltaY = touchStartY - touchY;
-      if (deltaY > 15) {
-        // Swiping up to scroll down
-        animateToFullUnroll();
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartY = e.touches[0].clientY;
       }
-    }
-  }, { passive: true });
+    },
+    { passive: true }
+  );
 
-  // 4. Keyboard Navigation (Down, PageDown, Space)
-  window.addEventListener('keydown', (e) => {
-    if (!stage || stage.classList.contains('unrolled')) return;
-    if (['ArrowDown', 'PageDown', ' '].includes(e.key)) {
+  window.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!stage || stage.classList.contains("unrolled")) return;
+
+      if (e.touches && e.touches.length > 0) {
+        const touchY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchY;
+
+        if (deltaY > 15) {
+          animateToFullUnroll();
+        }
+      }
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (!stage || stage.classList.contains("unrolled")) return;
+
+    if (["ArrowDown", "PageDown", " "].includes(e.key)) {
       animateToFullUnroll();
     }
   });
 
-  // 5. Click or tap on wax seal, prompt, or scroll to unroll
   const triggerUnroll = () => animateToFullUnroll();
-  if (seal) seal.addEventListener('click', triggerUnroll);
-  if (prompt) prompt.addEventListener('click', triggerUnroll);
+
+  if (seal) seal.addEventListener("click", triggerUnroll);
+  if (prompt) prompt.addEventListener("click", triggerUnroll);
+
   if (stage) {
-    stage.addEventListener('click', (e) => {
-      if (!stage.classList.contains('unrolled')) {
+    stage.addEventListener("click", () => {
+      if (!stage.classList.contains("unrolled")) {
         triggerUnroll();
       }
     });
   }
 
-  // 6. Navigation links should instantly unroll and scroll to target section
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+
+      if (href && href.startsWith("#")) {
         const targetEl = document.querySelector(href);
+
         if (targetEl) {
           e.preventDefault();
-          if (stage && !stage.classList.contains('unrolled')) {
+
+          if (stage && !stage.classList.contains("unrolled")) {
             setUnrollProgress(1);
-            stage.classList.add('unrolled');
+            stage.classList.add("unrolled");
             startCelebration();
           }
+
           setTimeout(() => {
-            targetEl.scrollIntoView({ behavior: 'smooth' });
+            targetEl.scrollIntoView({ behavior: "smooth" });
           }, 80);
         }
       }
@@ -337,14 +385,15 @@ function initScrollUnroll() {
   window.unrollRoyalScroll = animateToFullUnroll;
 }
 
-/* ==========================================================================
-   2. Music Controls
-   ========================================================================== */
+// ============================================================
+// 5. MUSIC CONTROLS
+// ============================================================
+
 function initMusicControl() {
-  const musicBtn = document.getElementById('music-toggle-btn');
+  const musicBtn = document.getElementById("music-toggle-btn");
   if (!musicBtn) return;
 
-  musicBtn.addEventListener('click', () => {
+  musicBtn.addEventListener("click", () => {
     if (window.weddingAudio) {
       const isPlaying = window.weddingAudio.toggle();
       updateMusicButtonUI(isPlaying);
@@ -353,157 +402,191 @@ function initMusicControl() {
 }
 
 function updateMusicButtonUI(isPlaying) {
-  const musicBtn = document.getElementById('music-toggle-btn');
+  const musicBtn = document.getElementById("music-toggle-btn");
   if (!musicBtn) return;
+
   if (isPlaying) {
-    musicBtn.classList.add('playing');
-    musicBtn.setAttribute('title', 'संगीत रोकें / Pause Music');
+    musicBtn.classList.add("playing");
+    musicBtn.setAttribute("title", "संगीत रोकें / Pause Music");
   } else {
-    musicBtn.classList.remove('playing');
-    musicBtn.setAttribute('title', 'विवाह गीत चलाएं / Play Vivah Geet');
+    musicBtn.classList.remove("playing");
+    musicBtn.setAttribute("title", "विवाह गीत चलाएं / Play Vivah Geet");
   }
 }
+
 window.updateMusicButtonUI = updateMusicButtonUI;
 
-/* ==========================================================================
-   3. Language Switcher
-   ========================================================================== */
+// ============================================================
+// 6. LANGUAGE SWITCHER
+// ============================================================
+
 function initLanguageToggle() {
-  const toggleBtn = document.getElementById('lang-toggle');
+  const toggleBtn = document.getElementById("lang-toggle");
   if (!toggleBtn) return;
 
-  toggleBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'hi' ? 'en' : 'hi';
-    toggleBtn.textContent = currentLang === 'hi' ? 'EN' : 'हिन्दी';
+  toggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "hi" ? "en" : "hi";
+    toggleBtn.textContent = currentLang === "hi" ? "EN" : "हिन्दी";
     applyTranslations(currentLang);
   });
 }
 
 function applyTranslations(lang) {
   const dict = i18nData[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+
     if (dict[key]) {
       el.textContent = dict[key];
     }
   });
 
-  // Toggle English translation of Shloka
-  const shlokaTrans = document.getElementById('shloka-translation-box');
+  const shlokaTrans = document.getElementById("shloka-translation-box");
+
   if (shlokaTrans) {
-    shlokaTrans.style.display = lang === 'en' ? 'block' : 'none';
+    shlokaTrans.style.display = lang === "en" ? "block" : "none";
   }
 }
 
-/* ==========================================================================
-   4. Countdown Timer to November 25, 2026 19:00 (Sitamarhi Baraat)
-   ========================================================================== */
+// ============================================================
+// 7. COUNTDOWN TIMER
+// Wedding date: November 25, 2026, 7:00 PM IST
+// ============================================================
+
 function initCountdown() {
-  const targetDate = new Date('2026-11-25T19:00:00+05:30').getTime();
+  const targetDate = new Date("2026-11-25T19:00:00+05:30").getTime();
 
   function updateClock() {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
-    const daysEl = document.getElementById('count-days');
-    const hoursEl = document.getElementById('count-hours');
-    const minsEl = document.getElementById('count-mins');
-    const secsEl = document.getElementById('count-secs');
+    const daysEl = document.getElementById("count-days");
+    const hoursEl = document.getElementById("count-hours");
+    const minsEl = document.getElementById("count-mins");
+    const secsEl = document.getElementById("count-secs");
 
     if (distance < 0) {
-      if (daysEl) daysEl.textContent = '00';
-      if (hoursEl) hoursEl.textContent = '00';
-      if (minsEl) minsEl.textContent = '00';
-      if (secsEl) secsEl.textContent = '00';
+      if (daysEl) daysEl.textContent = "00";
+      if (hoursEl) hoursEl.textContent = "00";
+      if (minsEl) minsEl.textContent = "00";
+      if (secsEl) secsEl.textContent = "00";
       return;
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
-    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-    if (minsEl) minsEl.textContent = minutes.toString().padStart(2, '0');
-    if (secsEl) secsEl.textContent = seconds.toString().padStart(2, '0');
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+      (distance % (1000 * 60)) / 1000
+    );
+
+    if (daysEl) daysEl.textContent = days.toString().padStart(2, "0");
+    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, "0");
+    if (minsEl) minsEl.textContent = minutes.toString().padStart(2, "0");
+    if (secsEl) secsEl.textContent = seconds.toString().padStart(2, "0");
   }
 
   updateClock();
   setInterval(updateClock, 1000);
 }
 
-/* ==========================================================================
-   5. Blessings Wall & Guestbook
-   ========================================================================== */
-function initBlessingsWall() {
-  const container = document.getElementById('blessings-list');
-  const form = document.getElementById('blessing-form');
-  const tokenBtns = document.querySelectorAll('.shagun-token-btn');
-  let selectedToken = '🌸';
+// ============================================================
+// 8. BLESSINGS WALL & GUESTBOOK
+// ============================================================
 
-  // Load from LocalStorage or default
-  let stored = localStorage.getItem('asha_nikhil_blessings');
+function initBlessingsWall() {
+  const container = document.getElementById("blessings-list");
+  const form = document.getElementById("blessing-form");
+  const tokenBtns = document.querySelectorAll(".shagun-token-btn");
+
+  let selectedToken = "🌸";
+
+  let stored = localStorage.getItem("asha_nikhil_blessings");
   let blessings = stored ? JSON.parse(stored) : defaultBlessings;
 
   function renderBlessings() {
     if (!container) return;
-    container.innerHTML = '';
-    blessings.slice().reverse().forEach(b => {
-      const card = document.createElement('div');
-      card.className = 'blessing-card';
+
+    container.innerHTML = "";
+
+    blessings.slice().reverse().forEach((b) => {
+      const card = document.createElement("div");
+      card.className = "blessing-card";
+
       card.innerHTML = `
         <div class="blessing-card-header">
           <span class="blessing-author">${escapeHtml(b.author)}</span>
-          <span class="blessing-badge">${b.badge || '🌸'}</span>
+          <span class="blessing-badge">${b.badge || "🌸"}</span>
         </div>
         <p class="blessing-text">"${escapeHtml(b.text)}"</p>
       `;
+
       container.appendChild(card);
     });
   }
 
-  tokenBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tokenBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      selectedToken = btn.getAttribute('data-badge') || '🌸';
+  tokenBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tokenBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedToken = btn.getAttribute("data-badge") || "🌸";
     });
   });
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const authorInput = document.getElementById('blessing-author-input');
-      const textInput = document.getElementById('blessing-text-input');
+
+      const authorInput = document.getElementById("blessing-author-input");
+      const textInput = document.getElementById("blessing-text-input");
 
       const author = authorInput.value.trim();
       const text = textInput.value.trim();
 
       if (!author || !text) return;
 
-      const newBlessing = { author, text, badge: selectedToken };
+      const newBlessing = {
+        author,
+        text,
+        badge: selectedToken
+      };
+
       blessings.push(newBlessing);
-      localStorage.setItem('asha_nikhil_blessings', JSON.stringify(blessings));
+
+      localStorage.setItem(
+        "asha_nikhil_blessings",
+        JSON.stringify(blessings)
+      );
 
       renderBlessings();
-      authorInput.value = '';
-      textInput.value = '';
+
+      authorInput.value = "";
+      textInput.value = "";
 
       if (window.particleCanvas) {
         window.particleCanvas.triggerFlowerShower(20);
       }
 
-      alert('शुभाशीष प्रेषित करने हेतु हार्दिक धन्यवाद! आपका आशीर्वाद नवदंपति तक पहुंच गया है।');
+      alert(
+        "शुभाशीष प्रेषित करने हेतु हार्दिक धन्यवाद! आपका आशीर्वाद नवदंपति तक पहुंच गया है।"
+      );
     });
   }
 
   renderBlessings();
 
-  // Shower flowers button
-  const showerBtn = document.getElementById('btn-shower-flowers');
+  const showerBtn = document.getElementById("btn-shower-flowers");
+
   if (showerBtn) {
-    showerBtn.addEventListener('click', () => {
+    showerBtn.addEventListener("click", () => {
       if (window.particleCanvas) {
         window.particleCanvas.triggerFlowerShower(20);
       }
@@ -511,120 +594,264 @@ function initBlessingsWall() {
   }
 }
 
-/* ==========================================================================
-   6. Modals (Original Patrika & RSVP)
-   ========================================================================== */
+// ============================================================
+// 9. MODALS
+// Note: RSVP form submission is handled separately below.
+// ============================================================
+
 function initModals() {
-  // Original Scroll Modal
-  const openScrollBtn = document.getElementById('btn-view-scroll');
-  const scrollModal = document.getElementById('modal-original-scroll');
+  const openScrollBtn = document.getElementById("btn-view-scroll");
+  const scrollModal = document.getElementById("modal-original-scroll");
 
-  // RSVP Modal
-  const openRsvpBtn = document.getElementById('btn-open-rsvp');
-  const rsvpModal = document.getElementById('modal-rsvp');
+  const openRsvpBtn = document.getElementById("btn-open-rsvp");
+  const rsvpModal = document.getElementById("modal-rsvp");
 
-  // Close triggers
-  document.querySelectorAll('.modal-close-btn, .modal-backdrop').forEach(closer => {
-    closer.addEventListener('click', (e) => {
-      if (e.target === closer) {
-        document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
-      }
+  document
+    .querySelectorAll(".modal-close-btn, .modal-backdrop")
+    .forEach((closer) => {
+      closer.addEventListener("click", (e) => {
+        if (e.target === closer) {
+          document
+            .querySelectorAll(".modal-backdrop")
+            .forEach((m) => m.classList.remove("active"));
+        }
+      });
     });
-  });
 
   if (openScrollBtn && scrollModal) {
-    openScrollBtn.addEventListener('click', () => {
-      scrollModal.classList.add('active');
+    openScrollBtn.addEventListener("click", () => {
+      scrollModal.classList.add("active");
     });
   }
 
   if (openRsvpBtn && rsvpModal) {
-    openRsvpBtn.addEventListener('click', () => {
-      rsvpModal.classList.add('active');
-    });
-  }
-
-  // RSVP Form Submit
-  const rsvpForm = document.getElementById('rsvp-form');
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('rsvp-name').value;
-      const count = document.getElementById('rsvp-guests').value;
-
-      if (window.particleCanvas) {
-        window.particleCanvas.triggerFlowerShower(20);
-      }
-
-      alert(`सादर धन्यवाद ${name} जी! आपकी ${count} सदस्यों की उपस्थिति दर्ज कर ली गई है। हम आपके स्वागत हेतु अत्यंत उत्सुक हैं।`);
-      if (rsvpModal) rsvpModal.classList.remove('active');
-      rsvpForm.reset();
+    openRsvpBtn.addEventListener("click", () => {
+      rsvpModal.classList.add("active");
     });
   }
 }
 
-/* ==========================================================================
-   7. Calendar & Maps & WhatsApp Share Utilities
-   ========================================================================== */
-// Add to Google Calendar helper
-window.addToGoogleCalendar = function(eventKey) {
+// ============================================================
+// 10. CALENDAR & MAPS & WHATSAPP SHARE UTILITIES
+// ============================================================
+
+window.addToGoogleCalendar = function (eventKey) {
   let title = "";
   let details = "";
   let location = "";
   let startDate = "";
   let endDate = "";
 
-  if (eventKey === 'shagun') {
+  if (eventKey === "shagun") {
     title = "Shagun Samaroh - Asha & Nikhil Wedding";
-    details = "Shagun Ceremony of Chi. Sau. Ayu. Asha Jha & Chi. Nikhil Kumar Jha. Village & Post - Nawada, Bahera, Darbhanga, Bihar.";
+
+    details =
+      "Shagun Ceremony of Chi. Sau. Ayu. Asha Jha & Chi. Nikhil Kumar Jha. Village & Post - Nawada, Bahera, Darbhanga, Bihar.";
+
     location = "Nawada, Bahera, Darbhanga, Bihar 847201";
-    startDate = "20261122T063000Z"; // 12:00 PM IST
+
+    startDate = "20261122T063000Z";
     endDate = "20261122T123000Z";
-  } else if (eventKey === 'haldi') {
+
+  } else if (eventKey === "haldi") {
     title = "Haldi & Mehndi Ceremony - Asha & Nikhil Wedding";
-    details = "Haldi & Mehndi Celebration of Asha & Nikhil. Sitamarhi, Bihar.";
-    location = "Dakshinwari Tola, Hanuman Mandir, NH 227, Srikhandi Bhittha, Sursand, Sitamarhi, Bihar 843331";
-    startDate = "20261123T043000Z"; // 10:00 AM IST
+
+    details =
+      "Haldi & Mehndi Celebration of Asha & Nikhil. Sitamarhi, Bihar.";
+
+    location =
+      "Dakshinwari Tola, Hanuman Mandir, NH 227, Srikhandi Bhittha, Sursand, Sitamarhi, Bihar 843331";
+
+    startDate = "20261123T043000Z";
     endDate = "20261123T153000Z";
-  } else if (eventKey === 'vivah') {
+
+  } else if (eventKey === "vivah") {
     title = "Shubh Vivah Samaroh - Asha Jha weds Nikhil Kumar Jha";
-    details = "The Grand Wedding Ceremony of Chi. Sau. Ayu. Asha Jha with Chi. Nikhil Kumar Jha. Jha Parivar invites you with family.";
-    location = "Dakshinwari Tola, Near Hanuman Mandir, NH 227, Srikhandi Bhittha, Sursand, Sitamarhi, Bihar 843331";
-    startDate = "20261125T133000Z"; // 7:00 PM IST
+
+    details =
+      "The Grand Wedding Ceremony of Chi. Sau. Ayu. Asha Jha with Chi. Nikhil Kumar Jha. Jha Parivar invites you with family.";
+
+    location =
+      "Dakshinwari Tola, Near Hanuman Mandir, NH 227, Srikhandi Bhittha, Sursand, Sitamarhi, Bihar 843331";
+
+    startDate = "20261125T133000Z";
     endDate = "20261126T003000Z";
   }
 
-  const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-  window.open(calUrl, '_blank');
+  const calUrl =
+    `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+
+  window.open(calUrl, "_blank");
 };
 
-// WhatsApp Sharing helper
-window.shareOnWhatsApp = function() {
-  const text = `✨ *॥ शुभ विवाह आमंत्रण ॥* ✨\n\nपरम आदरणीय,\nभगवान श्री गणेश एवं जानकी जी की असीम कृपा से हमारे परिवार के:\n\n👰 *चि. सौ. आयु. आशा झा*\nसुपुत्री — श्री विनय कुमार झा एवं स्वर्गीय श्रीमती ललिता विनय झा\n\nसंग\n\n🤵 *चि. निखिल कुमार झा*\nसुपुत्र — श्री शंकर झा एवं श्रीमती सुनयना देवी\n\nका शुभ विवाह संस्कार दिनांक *२५ नवम्बर २०२६* को सीतामढ़ी (बिहार) में संपन्न होने जा रहा है।\n\nआप सभी सपरिवार सादर आमंत्रित हैं। डिजिटल निमंत्रण पत्र यहाँ देखें:\n${window.location.href}\n\nसादर — *समस्त झा परिवार*`;
-  const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
+// WhatsApp Sharing
+
+window.shareOnWhatsApp = function () {
+  const text = `✨ *॥ शुभ विवाह आमंत्रण ॥* ✨
+
+परम आदरणीय,
+भगवान श्री गणेश एवं जानकी जी की असीम कृपा से हमारे परिवार के:
+
+👰 *चि. सौ. आयु. आशा झा*
+सुपुत्री — श्री विनय कुमार झा एवं स्वर्गीय श्रीमती ललिता विनय झा
+
+संग
+
+🤵 *चि. निखिल कुमार झा*
+सुपुत्र — श्री शंकर झा एवं श्रीमती सुनयना देवी
+
+का शुभ विवाह संस्कार दिनांक *२५ नवम्बर २०२६* को सीतामढ़ी (बिहार) में संपन्न होने जा रहा है।
+
+आप सभी सपरिवार सादर आमंत्रित हैं। डिजिटल निमंत्रण पत्र यहाँ देखें:
+${window.location.href}
+
+सादर — *समस्त झा परिवार*`;
+
+  const url =
+    `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
 };
 
-/* ==========================================================================
-   8. Scroll Animations (IntersectionObserver)
-   ========================================================================== */
+// ============================================================
+// 11. SCROLL ANIMATIONS
+// ============================================================
+
 function initScrollAnimations() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  document.querySelectorAll('.person-card, .event-card, .countdown-section, .cordial-invitation-box, .blessings-wall-section').forEach(el => {
-    observer.observe(el);
-  });
+  document
+    .querySelectorAll(
+      ".person-card, .event-card, .countdown-section, .cordial-invitation-box, .blessings-wall-section"
+    )
+    .forEach((el) => {
+      observer.observe(el);
+    });
 }
 
-// Utility: HTML Escaping
+// ============================================================
+// 12. UTILITY: HTML ESCAPING
+// ============================================================
+
 function escapeHtml(string) {
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   div.textContent = string;
   return div.innerHTML;
 }
+
+// ============================================================
+// 13. RSVP - GOOGLE SHEETS INTEGRATION
+// ============================================================
+
+(function () {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbygjUxAR-lYXmSDqrUup__qWd8qim2IHMX8-iDHp32htyDEwYdBinQQ1rYfeGzM2JTcaw/exec";  
+
+  function initRsvpGoogleSheets() {
+    const form = document.getElementById("rsvp-form");
+
+    if (!form || form.dataset.googleSheetsBound === "true") {
+      return;
+    }
+
+    form.dataset.googleSheetsBound = "true";
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const name =
+        document.getElementById("rsvp-name")?.value.trim() || "";
+
+      const numbers =
+        document.getElementById("rsvp-phone")?.value.trim() || "";
+
+      const memberCounts =
+        document.getElementById("rsvp-guests")?.value || "";
+
+      if (!name || !numbers || !memberCounts) {
+        alert("कृपया नाम, मोबाइल नंबर और सदस्यों की संख्या भरें।");
+        return;
+      }
+
+      const submitButton = form.querySelector(
+        'button[type="submit"]'
+      );
+
+      const originalButtonText = submitButton
+        ? submitButton.textContent
+        : "";
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "कृपया प्रतीक्षा करें...";
+      }
+
+      const payload = new URLSearchParams({
+        name: name,
+        numbers: numbers,
+        memberCounts: memberCounts
+      });
+
+      try {
+        /*
+          no-cors sends the request to Apps Script.
+          The browser cannot read the response in this mode.
+          Therefore, verify the submitted row in Google Sheets.
+        */
+
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: payload
+        });
+
+        if (window.particleCanvas) {
+          window.particleCanvas.triggerFlowerShower(20);
+        }
+
+        alert(
+          `🙏 धन्यवाद ${name} जी!\n\nआपकी RSVP जानकारी भेज दी गई है।\n\nThank you! Your RSVP information has been sent.`
+        );
+
+        form.reset();
+
+        const modal = document.getElementById("modal-rsvp");
+
+        if (modal) {
+          modal.classList.remove("active");
+          modal.classList.remove("show");
+        }
+
+      } catch (error) {
+        console.error("RSVP submission error:", error);
+
+        alert(
+          "माफ़ कीजिए, RSVP भेजने में समस्या हुई। कृपया पुनः प्रयास करें।"
+        );
+
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initRsvpGoogleSheets
+    );
+  } else {
+    initRsvpGoogleSheets();
+  }
+})();

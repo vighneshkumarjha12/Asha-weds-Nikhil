@@ -1,209 +1,302 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>शुभ विवाह आमंत्रण | आशा झा संग निखिल कुमार झा | Royal Wedding Invitation</title>
-  
-  <!-- SEO & Social Sharing Meta Tags -->
-  <meta name="description" content="॥ शुभ विवाह आमंत्रण ॥ चि. सौ. आयु. आशा झा संग चि. निखिल कुमार झा - २५ नवम्बर २०२६, सीतामढ़ी (बिहार)। समस्त झा परिवार आपका सपरिवार हार्दिक स्वागत करता है।">
-  <meta name="keywords" content="Asha and Nikhil Wedding, Shubh Vivah, Maithil Wedding, Jha Parivar, Sitamarhi Bihar, Royal Wedding Scroll, Wedding Invitation">
-  <meta property="og:title" content="॥ शुभ विवाह आमंत्रण ॥ आशा झा संग निखिल कुमार झा">
-  <meta property="og:description" content="सादर निमंत्रण: २५ नवम्बर २०२६ | नवयुगल को अपना शुभाशीष प्रदान कर इस पावन अवसर की शोभा बढ़ाएँ।">
-  <meta property="og:image" content="assets/original-scroll.jpg">
-  <meta property="og:type" content="website">
+  <!DOCTYPE html>
+  <html lang="hi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शुभ विवाह आमंत्रण | आशा झा संग निखिल कुमार झा | Royal Wedding Invitation</title>
+    
+    <!-- SEO & Social Sharing Meta Tags -->
+    <meta name="description" content="॥ शुभ विवाह आमंत्रण ॥ चि. सौ. आयु. आशा झा संग चि. निखिल कुमार झा - २५ नवम्बर २०२६, सीतामढ़ी (बिहार)। समस्त झा परिवार आपका सपरिवार हार्दिक स्वागत करता है।">
+    <meta name="keywords" content="Asha and Nikhil Wedding, Shubh Vivah, Maithil Wedding, Jha Parivar, Sitamarhi Bihar, Royal Wedding Scroll, Wedding Invitation">
+    <meta property="og:title" content="॥ शुभ विवाह आमंत्रण ॥ आशा झा संग निखिल कुमार झा">
+    <meta property="og:description" content="सादर निमंत्रण: २५ नवम्बर २०२६ | नवयुगल को अपना शुभाशीष प्रदान कर इस पावन अवसर की शोभा बढ़ाएँ।">
+    <meta property="og:image" content="assets/original-scroll.jpg">
+    <meta property="og:type" content="website">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
-  <!-- Floating Particles Canvas (Rose Petals & Golden Stardust) -->
-  <canvas id="particle-canvas"></canvas>
+    <!-- Floating Particles Canvas (Rose Petals & Golden Stardust) -->
+    <canvas id="particle-canvas"></canvas>
 
-  <!-- Royal Maharaja Sabha (Grand Palace Darbar) Background -->
-  <div class="maharaja-sabha-bg">
-    <div class="sabha-overlay"></div>
-    <div class="sabha-vignette"></div>
-  </div>
-
-  <!-- Global SVG Gradients & Definitions -->
-  <svg width="0" height="0" style="position: absolute;">
-    <defs>
-      <linearGradient id="goldGradFill" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#bf953f" />
-        <stop offset="25%" stop-color="#fcf6ba" />
-        <stop offset="50%" stop-color="#b38728" />
-        <stop offset="75%" stop-color="#fbf5b7" />
-        <stop offset="100%" stop-color="#aa771c" />
-      </linearGradient>
-      <linearGradient id="goldGradStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#d4af37" />
-        <stop offset="50%" stop-color="#fff5a5" />
-        <stop offset="100%" stop-color="#aa771c" />
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <!-- ========================================================================
-       Floating Navigation Bar
-       ======================================================================== -->
-  <nav class="floating-navbar" id="main-nav">
-    <a href="#blessings" class="nav-brand">
-      <img src="assets/couple.png" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img" style="width: 50px; height: 50px; object-fit: contain;">
-      <span class="nav-brand-text gold-foil-text" data-i18n="navBrand">आशा संग निखिल</span>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="#blessings" data-i18n="navBlessings">मंगलाचरण</a></li>
-      <li><a href="#couple" data-i18n="navCouple">वर-वधू</a></li>
-      <li><a href="#muhurat" data-i18n="navMuhurat">लग्न मुहूर्त</a></li>
-      <li><a href="#events" data-i18n="navEvents">कार्यक्रम</a></li>
-      <li><a href="#blessings-wall" data-i18n="navBlessingsWall">शुभाशीष</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <!-- Music Toggle Button -->
-      <button class="icon-btn music-btn playing" id="music-toggle-btn" title="संगीत रोकें / Pause Music">
-        <div class="music-bars">
-          <div class="music-bar"></div>
-          <div class="music-bar"></div>
-          <div class="music-bar"></div>
-        </div>
-      </button>
-
-      <!-- Language Switcher -->
-      <button class="lang-toggle-btn" id="lang-toggle" title="Change Language">EN</button>
-
-      <!-- RSVP Action Button -->
-      <button class="action-btn-gold" id="btn-open-rsvp">
-        <span>✉</span>
-        <span data-i18n="navRsvp">आर.एस.वी.पी</span>
-      </button>
+    <!-- Royal Maharaja Sabha (Grand Palace Darbar) Background -->
+    <div class="maharaja-sabha-bg">
+      <div class="sabha-overlay"></div>
+      <div class="sabha-vignette"></div>
     </div>
-  </nav>
 
-  <!-- ========================================================================
-       Main Scroll Stage (Emulates the physical velvet scroll in Maharaja Sabha)
-       ======================================================================== -->
-  <main class="main-wrapper">
-    <div class="scroll-stage" id="scroll-stage">
+    <!-- Global SVG Gradients & Definitions -->
+    <svg width="0" height="0" style="position: absolute;">
+      <defs>
+        <linearGradient id="goldGradFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#bf953f" />
+          <stop offset="25%" stop-color="#fcf6ba" />
+          <stop offset="50%" stop-color="#b38728" />
+          <stop offset="75%" stop-color="#fbf5b7" />
+          <stop offset="100%" stop-color="#aa771c" />
+        </linearGradient>
+        <linearGradient id="goldGradStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d4af37" />
+          <stop offset="50%" stop-color="#fff5a5" />
+          <stop offset="100%" stop-color="#aa771c" />
+        </linearGradient>
+      </defs>
+    </svg>
 
-      <!-- Royal Wax Seal & Golden Ribbon (Locks the rolled message board until unrolled) -->
-      <div class="scroll-seal-wrapper" id="scroll-seal-wrapper">
-        <div class="rolled-gold-ribbon"></div>
-        <div class="rolled-wax-seal" id="rolled-wax-seal" title="क्लिक करें या नीचे स्क्रॉल करें">
-          <img src="assets/front_gampati.jpg" alt="श्री गणेश" class="wax-seal-img">
-          <span class="seal-seal-text">शुभ विवाह</span>
-        </div>
+    <!-- ========================================================================
+        Floating Navigation Bar
+        ======================================================================== -->
+    <nav class="floating-navbar" id="main-nav">
+      <a href="#blessings" class="nav-brand">
+        <img src="assets/couple.png" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img" style="width: 50px; height: 50px; object-fit: contain;">
+        <span class="nav-brand-text gold-foil-text" data-i18n="navBrand">आशा संग निखिल</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#blessings" data-i18n="navBlessings">मंगलाचरण</a></li>
+        <li><a href="#couple" data-i18n="navCouple">वर-वधू</a></li>
+        <li><a href="#muhurat" data-i18n="navMuhurat">लग्न मुहूर्त</a></li>
+        <li><a href="#events" data-i18n="navEvents">कार्यक्रम</a></li>
+        <li><a href="#blessings-wall" data-i18n="navBlessingsWall">शुभाशीष</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Music Toggle Button -->
+        <button class="icon-btn music-btn playing" id="music-toggle-btn" title="संगीत रोकें / Pause Music">
+          <div class="music-bars">
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+          </div>
+        </button>
+
+        <!-- Language Switcher -->
+        <button class="lang-toggle-btn" id="lang-toggle" title="Change Language">EN</button>
+
+        <!-- RSVP Action Button -->
+        <button class="action-btn-gold" id="btn-open-rsvp">
+          <span>✉</span>
+          <span data-i18n="navRsvp">आर.एस.वी.पी</span>
+        </button>
       </div>
+    </nav>
 
-      <!-- Floating On-Scroll Indicator Prompt -->
-      <div class="scroll-unroll-prompt" id="scroll-unroll-prompt">
-        <div class="prompt-mouse-wheel">
-          <div class="wheel-dot"></div>
-        </div>
-        <p class="prompt-text" data-i18n="scrollPrompt">शाही निमंत्रण पत्र खोलने के लिए नीचे स्क्रॉल करें ↓</p>
-        <p class="prompt-subtext" data-i18n="scrollSubPrompt">Scroll down to unroll the royal invitation</p>
-        <div class="prompt-bounce-arrow">⌄</div>
-      </div>
+    <!-- ========================================================================
+        Main Scroll Stage (Emulates the physical velvet scroll in Maharaja Sabha)
+        ======================================================================== -->
+    <main class="main-wrapper">
+      <div class="scroll-stage" id="scroll-stage">
 
-      <!-- Ambient Diyas on Flanks with Flickering Flames -->
-      <aside class="ambient-diya diya-left" aria-hidden="true">
-        <div class="diya-flame-wrapper">
-          <div class="diya-glow"></div>
-          <div class="diya-flame"></div>
-        </div>
-        <div class="diya-lamp-base"></div>
-      </aside>
-
-      <aside class="ambient-diya diya-right" aria-hidden="true">
-        <div class="diya-flame-wrapper">
-          <div class="diya-glow"></div>
-          <div class="diya-flame"></div>
-        </div>
-        <div class="diya-lamp-base"></div>
-      </aside>
-
-      <!-- TOP SCROLL ROD (Golden bar with sculpted finials & hanging tassels) -->
-      <header class="scroll-rod rod-top">
-        <div class="rod-finial">
-          <div class="hanging-tassel tassel-left">
-            <div class="tassel-cord"></div>
-            <div class="tassel-ball"></div>
-            <div class="tassel-fringes"></div>
+        <!-- Royal Wax Seal & Golden Ribbon (Locks the rolled message board until unrolled) -->
+        <div class="scroll-seal-wrapper" id="scroll-seal-wrapper">
+          <div class="rolled-gold-ribbon"></div>
+          <div class="rolled-wax-seal" id="rolled-wax-seal" title="क्लिक करें या नीचे स्क्रॉल करें">
+            <img src="assets/front_gampati.jpg" alt="श्री गणेश" class="wax-seal-img">
+            <span class="seal-seal-text">शुभ विवाह</span>
           </div>
         </div>
-        <div style="flex: 1; text-align: center;">
-          <span style="font-size: 0.8rem; letter-spacing: 5px; color: #503102; font-weight: 700;">卐 ॐ श्री गणेशाय नमः ॐ 卐</span>
-        </div>
-        <div class="rod-finial">
-          <div class="hanging-tassel tassel-right">
-            <div class="tassel-cord"></div>
-            <div class="tassel-ball"></div>
-            <div class="tassel-fringes"></div>
-          </div>
-        </div>
-      </header>
 
-      <!-- VELVET SCROLL BODY -->
-      <article class="velvet-scroll-body">
+        <!-- Floating On-Scroll Indicator Prompt -->
+        <div class="scroll-unroll-prompt" id="scroll-unroll-prompt">
+          <div class="prompt-mouse-wheel">
+            <div class="wheel-dot"></div>
+          </div>
+          <p class="prompt-text" data-i18n="scrollPrompt">शाही निमंत्रण पत्र खोलने के लिए नीचे स्क्रॉल करें ↓</p>
+          <p class="prompt-subtext" data-i18n="scrollSubPrompt">Scroll down to unroll the royal invitation</p>
+          <div class="prompt-bounce-arrow">⌄</div>
+        </div>
+
+        <!-- Ambient Diyas on Flanks with Flickering Flames -->
+        <aside class="ambient-diya diya-left" aria-hidden="true">
+          <div class="diya-flame-wrapper">
+            <div class="diya-glow"></div>
+            <div class="diya-flame"></div>
+          </div>
+          <div class="diya-lamp-base"></div>
+        </aside>
+
+        <aside class="ambient-diya diya-right" aria-hidden="true">
+          <div class="diya-flame-wrapper">
+            <div class="diya-glow"></div>
+            <div class="diya-flame"></div>
+          </div>
+          <div class="diya-lamp-base"></div>
+        </aside>
+
+        <!-- TOP SCROLL ROD (Golden bar with sculpted finials & hanging tassels) -->
+        <header class="scroll-rod rod-top">
+          <div class="rod-finial">
+            <div class="hanging-tassel tassel-left">
+              <div class="tassel-cord"></div>
+              <div class="tassel-ball"></div>
+              <div class="tassel-fringes"></div>
+            </div>
+          </div>
+          <div style="flex: 1; text-align: center;">
+            <span style="font-size: 0.8rem; letter-spacing: 5px; color: #503102; font-weight: 700;">卐 ॐ श्री गणेशाय नमः ॐ 卐</span>
+          </div>
+          <div class="rod-finial">
+            <div class="hanging-tassel tassel-right">
+              <div class="tassel-cord"></div>
+              <div class="tassel-ball"></div>
+              <div class="tassel-fringes"></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- VELVET SCROLL BODY -->
+        <article class="velvet-scroll-body">
+          
+          <!-- Ornate Borders -->
+          <div class="scroll-border-outer"></div>
+          <div class="scroll-border-inner"></div>
+
+          <!-- Four Filigree Corners -->
+          <div class="filigree-corner corner-tl">
+            <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
+          </div>
+          <div class="filigree-corner corner-tr">
+            <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
+          </div>
+          <div class="filigree-corner corner-bl">
+            <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
+          </div>
+          <div class="filigree-corner corner-br">
+            <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
+          </div>
+
+          <!-- Hanging Temple Bells on Top Border -->
+          <svg class="hanging-temple-bell bell-left" viewBox="0 0 50 70">
+            <path d="M25 0 L25 20 M15 20 C15 20 10 40 5 45 C20 48 30 48 45 45 C40 40 35 20 35 20 Z M22 47 C22 52 28 52 28 47 Z" fill="url(#goldGradFill)"/>
+          </svg>
+          <svg class="hanging-temple-bell bell-right" viewBox="0 0 50 70">
+            <path d="M25 0 L25 20 M15 20 C15 20 10 40 5 45 C20 48 30 48 45 45 C40 40 35 20 35 20 Z M22 47 C22 52 28 52 28 47 Z" fill="url(#goldGradFill)"/>
+          </svg>
+
+          <!-- ====================================================================
+              1. Mangalacharan / Divine Invocations
+              ==================================================================== -->
+          <section class="divine-invocation-section" id="blessings">
+            <div class="ganesha-crest">
+              <div class="ganesha-aura"></div>
+              <!-- Majestic Royal Ganesha Vector -->
+              <svg class="ganesha-svg" viewBox="0 0 120 120">
+              
         
-        <!-- Ornate Borders -->
-        <div class="scroll-border-outer"></div>
-        <div class="scroll-border-inner"></div>
+            </div>
 
-        <!-- Four Filigree Corners -->
-        <div class="filigree-corner corner-tl">
-          <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
-        </div>
-        <div class="filigree-corner corner-tr">
-          <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
-        </div>
-        <div class="filigree-corner corner-bl">
-          <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
-        </div>
-        <div class="filigree-corner corner-br">
-          <svg viewBox="0 0 100 100"><path d="M5 95 Q 5 5 95 5 M15 95 Q 15 15 95 15 M25 95 Q 25 25 95 25 M5 5 L 35 35"/></svg>
-        </div>
-
-        <!-- Hanging Temple Bells on Top Border -->
-        <svg class="hanging-temple-bell bell-left" viewBox="0 0 50 70">
-          <path d="M25 0 L25 20 M15 20 C15 20 10 40 5 45 C20 48 30 48 45 45 C40 40 35 20 35 20 Z M22 47 C22 52 28 52 28 47 Z" fill="url(#goldGradFill)"/>
-        </svg>
-        <svg class="hanging-temple-bell bell-right" viewBox="0 0 50 70">
-          <path d="M25 0 L25 20 M15 20 C15 20 10 40 5 45 C20 48 30 48 45 45 C40 40 35 20 35 20 Z M22 47 C22 52 28 52 28 47 Z" fill="url(#goldGradFill)"/>
-        </svg>
-
-        <!-- ====================================================================
-             1. Mangalacharan / Divine Invocations
-             ==================================================================== -->
-        <section class="divine-invocation-section" id="blessings">
-          <div class="ganesha-crest">
-            <div class="ganesha-aura"></div>
-            <!-- Majestic Royal Ganesha Vector -->
-            <svg class="ganesha-svg" viewBox="0 0 120 120">
-             
+            <h1 class="om-ganeshaya-heading gold-foil-text shimmer" data-i18n="omGanesh">॥ श्री गणेशाय नमः ॥</h1>
+  <img src="assets/ganpati.jpg" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img">
       
-          </div>
+            <div class="sanskrit-shloka-box">
+              <p class="sanskrit-shloka-text" data-i18n="shlokaText">
+                गजाननं भूत गणादि सेवितं,
+  कपित्थ जम्बू फल चारू भक्षणम् । <br>
+  उमासुतं शोक विनाशकारकम्,
+  नमामि विघ्नेश्वर पाद पंकजम् ॥
+              </p>
+              <p class="shloka-translation" id="shloka-translation-box">
+                "O Lord Ganesha, elephant-faced, attended by celestials, savorer of sacred jambu fruits, son of Goddess Uma, remover of all sorrows, I bow in reverence at your sacred lotus feet."
+              </p>
+            </div>
 
-          <h1 class="om-ganeshaya-heading gold-foil-text shimmer" data-i18n="omGanesh">॥ श्री गणेशाय नमः ॥</h1>
- <img src="assets/ganpati.jpg" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img">
-     
-          <div class="sanskrit-shloka-box">
-            <p class="sanskrit-shloka-text" data-i18n="shlokaText">
-              गजाननं भूत गणादि सेवितं,
-कपित्थ जम्बू फल चारू भक्षणम् । <br>
-उमासुतं शोक विनाशकारकम्,
-नमामि विघ्नेश्वर पाद पंकजम् ॥
+            <div class="ornate-gold-divider">
+              <div class="divider-line"></div>
+              <svg class="divider-motif" viewBox="0 0 40 40">
+                <path d="M20 0 L25 15 L40 20 L25 25 L20 40 L15 25 L0 20 L15 15 Z" fill="url(#goldGradFill)"/>
+              </svg>
+              <div class="divider-line"></div>
+            </div>
+          </section>
+
+          <!-- ====================================================================
+              2. Grand Invitation Title & Couple Lineage
+              ==================================================================== -->
+          <section class="aamantran-title-badge" id="couple">
+            <h2 class="main-invitation-title gold-foil-text shimmer" data-i18n="mainTitle">॥ शुभ विवाह आमंत्रण ॥</h2>
+          </section>
+
+          <section class="couple-showcase-container">
+            <!-- BRIDE CARD -->
+            <div class="person-card bride-card">
+              <span class="person-tag" data-i18n="brideTag">वधू</span>
+              <h3 class="person-name gold-foil-text">चि. सौ. आयु. आशा झा</h3>
+              
+              <div class="lineage-details">
+                <div class="lineage-row">
+                  <span class="lineage-title" data-i18n="daughterOf">सुपुत्री —</span>
+                  <span class="lineage-names">श्री विनय कुमार झा एवं स्वर्गीय श्रीमती ललिता विनय झा</span>
+                </div>
+                <div class="lineage-row">
+                  <span class="lineage-title" data-i18n="grandDaughterOf">सुपौत्री —</span>
+                  <span class="lineage-names">स्वर्गीय श्री सीताराम झा एवं श्रीमती प्रमिला देवी</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONNECTOR -->
+            <div class="couple-connector">
+              <div class="connector-circle">संग</div>
+            </div>
+
+            <!-- GROOM CARD -->
+            <div class="person-card groom-card">
+              <span class="person-tag" data-i18n="groomTag">वर</span>
+              <h3 class="person-name gold-foil-text">चि. निखिल कुमार झा</h3>
+              
+              <div class="lineage-details">
+                <div class="lineage-row">
+                  <span class="lineage-title" data-i18n="sonOf">सुपुत्र —</span>
+                  <span class="lineage-names">श्री शंकर झा एवं श्रीमती सुनयना देवी</span>
+                </div>
+                <div class="lineage-row">
+                  <span class="lineage-title" data-i18n="grandSonOf">सुपौत्र —</span>
+                  <span class="lineage-names">स्वर्गीय श्री गोपीरमण झा एवं स्वर्गीय श्रीमती भालेश्वरी देवी</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cordial Welcome Note -->
+          <section class="cordial-invitation-box">
+            <p class="cordial-text" data-i18n="cordialMessage">
+              आप सभी सपरिवार सादर आमंत्रित हैं। नवयुगल को अपना स्नेह एवं शुभाशीष प्रदान कर इस मंगलमय अवसर की शोभा बढ़ाएँ।
             </p>
-            <p class="shloka-translation" id="shloka-translation-box">
-              "O Lord Ganesha, elephant-faced, attended by celestials, savorer of sacred jambu fruits, son of Goddess Uma, remover of all sorrows, I bow in reverence at your sacred lotus feet."
+          </section>
+
+          <!-- ====================================================================
+              3. Live Countdown to Wedding
+              ==================================================================== -->
+          <section class="countdown-section" id="muhurat">
+            <h3 class="countdown-title gold-foil-text" data-i18n="countdownTitle">शुभ लग्न मुहूर्त उल्टी गिनती</h3>
+            <p style="font-size: 0.95rem; color: #eeddbb; margin-bottom: 20px;">
+              २५ नवम्बर २०२६ | सीतामढ़ी (बिहार)
             </p>
-          </div>
+
+            <div class="countdown-grid">
+              <div class="countdown-unit-card">
+                <span class="countdown-number" id="count-days">00</span>
+                <span class="countdown-label" data-i18n="daysLabel">दिन</span>
+              </div>
+              <div class="countdown-unit-card">
+                <span class="countdown-number" id="count-hours">00</span>
+                <span class="countdown-label" data-i18n="hoursLabel">घंटे</span>
+              </div>
+              <div class="countdown-unit-card">
+                <span class="countdown-number" id="count-mins">00</span>
+                <span class="countdown-label" data-i18n="minsLabel">मिनट</span>
+              </div>
+              <div class="countdown-unit-card">
+                <span class="countdown-number" id="count-secs">00</span>
+                <span class="countdown-label" data-i18n="secsLabel">सेकंड</span>
+              </div>
+            </div>
+          </section>
 
           <div class="ornate-gold-divider">
             <div class="divider-line"></div>
@@ -212,444 +305,351 @@
             </svg>
             <div class="divider-line"></div>
           </div>
-        </section>
 
-        <!-- ====================================================================
-             2. Grand Invitation Title & Couple Lineage
-             ==================================================================== -->
-        <section class="aamantran-title-badge" id="couple">
-          <h2 class="main-invitation-title gold-foil-text shimmer" data-i18n="mainTitle">॥ शुभ विवाह आमंत्रण ॥</h2>
-        </section>
+          <!-- ====================================================================
+              4. Auspicious Ceremonies Timeline (मांगलिक कार्यक्रम)
+              ==================================================================== -->
+          <section class="events-section" id="events">
+            <div class="section-title-wrap">
+              <h2 class="section-main-title gold-foil-text shimmer" data-i18n="eventsTitle">मांगलिक कार्यक्रम</h2>
+              <p class="section-subtitle" data-i18n="eventsSub">Auspicious Wedding Ceremonies</p>
+            </div>
 
-        <section class="couple-showcase-container">
-          <!-- BRIDE CARD -->
-          <div class="person-card bride-card">
-            <span class="person-tag" data-i18n="brideTag">वधू</span>
-            <h3 class="person-name gold-foil-text">चि. सौ. आयु. आशा झा</h3>
+            <div class="events-timeline">
+              
+              <!-- 1. SHAGUN CEREMONY -->
+              <article class="event-card">
+                <div class="event-header">
+                  <div class="event-name-group">
+                    <div class="event-icon-badge">🥥</div>
+                    <h3 class="event-name gold-foil-text" data-i18n="shagunTitle">शगुन समारोह</h3>
+                  </div>
+                  <div class="event-date-badge">
+                    <span>📅</span>
+                    <span data-i18n="shagunDate">२२ नवम्बर २०२६ (रविवार)</span>
+                  </div>
+                </div>
+
+                <div class="event-body">
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="shagunTimeTitle">शुभ समय :</p>
+                      <p data-i18n="shagunTimeVal">दोपहर १२:०० बजे से</p>
+                    </div>
+                  </div>
+
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="shagunVenueTitle">स्थान :</p>
+                      <p data-i18n="shagunVenueVal">ग्राम एवं डाकघर — नवादा, बहेरा, दरभंगा, बिहार — ८४७२०१</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="event-actions-group">
+                  <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('shagun')">
+                    <span>📅</span>
+                    <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
+                  </button>
+                  <a class="event-action-btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Nawada+Bahera+Darbhanga+Bihar+847201" target="_blank" rel="noopener">
+                    <span>📍</span>
+                    <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- 2. HALDI & MEHNDI CEREMONY -->
+              <article class="event-card">
+                <div class="event-header">
+                  <div class="event-name-group">
+                    <div class="event-icon-badge">🌿</div>
+                    <div>
+                      <h3 class="event-name gold-foil-text" data-i18n="haldiTitle">हल्दी एवं मेहंदी कार्यक्रम</h3>
+                      <span class="event-theme-tag theme-haldi">Theme: पीला एवं हरियाली (Yellow & Green)</span>
+                    </div>
+                  </div>
+                  <div class="event-date-badge">
+                    <span>📅</span>
+                    <span data-i18n="haldiDate">२३ नवम्बर २०२६ (सोमवार)</span>
+                  </div>
+                </div>
+
+                <div class="event-body">
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="haldiTimeTitle">शुभ समय :</p>
+                      <p data-i18n="haldiTimeVal">हल्दी: प्रातः १०:०० बजे | मेहंदी: सायं ०५:०० बजे</p>
+                    </div>
+                  </div>
+
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="haldiVenueTitle">स्थान :</p>
+                      <p data-i18n="haldiVenueVal">दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. २२७, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — ८४३३३१</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="event-actions-group">
+                  <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('haldi')">
+                    <span>📅</span>
+                    <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
+                  </button>
+                  <a class="event-action-btn btn-maps" href="https://www.google.com/maps/place/Shrikhandi+Bhittha,+Shrikhandi+Bhitta+Pashchimi,+Bihar+843331/@26.6193799,85.7774903,85a,75y,279.02h,95.41t/data=!3m7!1e1!3m5!1sE30Nu1DeyrFC0dfrQAG0Gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.410045049314249%26panoid%3DE30Nu1DeyrFC0dfrQAG0Gg%26yaw%3D279.0185035318523!7i16384!8i8192!4m14!1m7!3m6!1s0x39ec45d723f53b13:0x681b4d90a947397c!2sIndo-Nepal+Border+Gate,+Bhithamore!8m2!3d26.6330269!4d85.7736208!16s%2Fg%2F11rsvhbwz2!3m5!1s0x39ec44b9f1b740ad:0xc84c4564ee59b77!8m2!3d26.6252235!4d85.7743536!16s%2Fg%2F1hc37trgm!5m1!1e2?entry=ttu&amp;g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+                    <span>📍</span>
+                    <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- 3. GRAND WEDDING CEREMONY (SHUBH VIVAH) -->
+              <article class="event-card" style="border-width: 2px; border-color: #ffd700;">
+                <div class="event-header">
+                  <div class="event-name-group">
+                    <div class="event-icon-badge" style="background: radial-gradient(circle, #850f24 0%, #3a040e 100%);">🪔</div>
+                    <div>
+                      <h3 class="event-name gold-foil-text shimmer" data-i18n="vivahTitle">शुभ विवाह समारोह</h3>
+                      <span class="event-theme-tag theme-vivah">The Grand Wedding Night</span>
+                    </div>
+                  </div>
+                  <div class="event-date-badge" style="border-color: #ffd700;">
+                    <span>📅</span>
+                    <span data-i18n="vivahDate">२५ नवम्बर २०२६ (बुधवार)</span>
+                  </div>
+                </div>
+
+                <div class="event-body">
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="vivahTimeTitle">शुभ मुहूर्त :</p>
+                      <p data-i18n="vivahTimeVal">बारात आगमन: सायं ०७:०० बजे | जयमाला: रात्रि ०८:३० बजे | शुभ लग्न: रात्रि ११:१५ बजे</p>
+                    </div>
+                  </div>
+
+                  <div class="event-info-row">
+                    <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
+                    <div class="event-info-content">
+                      <p class="event-info-title" data-i18n="vivahVenueTitle">स्थान :</p>
+                      <p data-i18n="vivahVenueVal">दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. २२७, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — ८४३३३१</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="event-actions-group">
+                  <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('vivah')">
+                    <span>📅</span>
+                    <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
+                  </button>
+                  <a class="event-action-btn btn-maps" href="https://www.google.com/maps/place/Shrikhandi+Bhittha,+Shrikhandi+Bhitta+Pashchimi,+Bihar+843331/@26.6193799,85.7774903,85a,75y,279.02h,95.41t/data=!3m7!1e1!3m5!1sE30Nu1DeyrFC0dfrQAG0Gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.410045049314249%26panoid%3DE30Nu1DeyrFC0dfrQAG0Gg%26yaw%3D279.0185035318523!7i16384!8i8192!4m14!1m7!3m6!1s0x39ec45d723f53b13:0x681b4d90a947397c!2sIndo-Nepal+Border+Gate,+Bhithamore!8m2!3d26.6330269!4d85.7736208!16s%2Fg%2F11rsvhbwz2!3m5!1s0x39ec44b9f1b740ad:0xc84c4564ee59b77!8m2!3d26.6252235!4d85.7743536!16s%2Fg%2F1hc37trgm!5m1!1e2?entry=ttu&amp;g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+                    <span>📍</span>
+                    <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- ====================================================================
+              5. Closing Cordial Note & Family Signature
+              ==================================================================== -->
+          <section class="family-closing-box">
+            <p class="closing-respect-message" data-i18n="closingMessage">
+              आपकी गरिमामयी उपस्थिति एवं शुभाशीष हमारे लिए अमूल्य होंगे।
+            </p>
+            <h3 class="closing-family-signature gold-foil-text shimmer" data-i18n="closingFamily">
+              सादर — समस्त झा परिवार
+            </h3>
+
+            <div style="margin-top: 25px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+              <button class="action-btn-gold" id="btn-view-scroll">
+                <span>📜</span>
+                <span data-i18n="btnOriginalScroll">मूल पत्रिका देखें</span>
+              </button>
+              <button class="action-btn-gold" onclick="shareOnWhatsApp()">
+                <span>💬</span>
+                <span data-i18n="btnShareWhatsApp">व्हाट्सएप पर शेयर करें</span>
+              </button>
+              <button class="action-btn-gold" id="btn-shower-flowers">
+                <span data-i18n="btnPushpaShower">पुष्प वर्षा करें 🌸</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ====================================================================
+              6. Interactive Digital Blessings Wall (शुभाशीष दीवार)
+              ==================================================================== -->
+          <section class="blessings-wall-section" id="blessings-wall">
+            <div class="section-title-wrap">
+              <h2 class="section-main-title gold-foil-text" data-i18n="blessingWallTitle">शुभाशीष एवं मंगलकामनाएं</h2>
+              <p class="section-subtitle" data-i18n="blessingWallSub">नवदंपति के लिए अपने पवित्र शुभाशीष प्रेषित करें</p>
+            </div>
+
+            <!-- Blessing Input Form -->
+            <form class="blessing-form-container" id="blessing-form">
+              <div class="form-input-group">
+                <label class="form-label" for="blessing-author-input">आपका नाम एवं संबंध (Your Name & Relation) :</label>
+                <input type="text" class="form-input" id="blessing-author-input" placeholder="उदा. सुरेश झा (चाचा जी, पटना)" required>
+              </div>
+
+              <div class="form-input-group">
+                <label class="form-label" for="blessing-text-input">आपका शुभाशीष संदेश (Blessing Message) :</label>
+                <textarea class="form-textarea" id="blessing-text-input" rows="3" placeholder="नवदंपति के सुखद दांपत्य जीवन हेतु अपनी मंगलकामनाएं लिखें..." required></textarea>
+              </div>
+
+              <label class="form-label">शगुन प्रतीक चुनें (Choose Shagun Token) :</label>
+              <div class="shagun-tokens-selector">
+                <button type="button" class="shagun-token-btn active" data-badge="🌸">🌸 पुष्प वर्षा</button>
+                <button type="button" class="shagun-token-btn" data-badge="🪔">🪔 मंगल दीप</button>
+                <button type="button" class="shagun-token-btn" data-badge="🥥">🥥 शुभ शगुन</button>
+                <button type="button" class="shagun-token-btn" data-badge="📿">📿 शुभाशीष</button>
+              </div>
+
+              <button type="submit" class="action-btn-gold" style="width: 100%; justify-content: center; padding: 12px;">
+                <span>🙏</span>
+                <span>शुभाशीष भेजें / Send Blessings</span>
+              </button>
+            </form>
+
+            <!-- Dynamic Blessings Wall Display -->
+            <div class="blessings-grid" id="blessings-list">
+              <!-- Dynamically populated by js/script.js -->
+            </div>
+          </section>
+
+          <!-- ====================================================================
+              7. Bottom Royal Procession Silhouette (Baraat & Rath)
+              ==================================================================== -->
+          <footer class="royal-procession-footer">
+            <!-- Intricately Detailed Golden Procession (Baraat / Rath / Horses / Spire) -->
             
-            <div class="lineage-details">
-              <div class="lineage-row">
-                <span class="lineage-title" data-i18n="daughterOf">सुपुत्री —</span>
-                <span class="lineage-names">श्री विनय कुमार झा एवं स्वर्गीय श्रीमती ललिता विनय झा</span>
-              </div>
-              <div class="lineage-row">
-                <span class="lineage-title" data-i18n="grandDaughterOf">सुपौत्री —</span>
-                <span class="lineage-names">स्वर्गीय श्री सीताराम झा एवं श्रीमती प्रमिला देवी</span>
-              </div>
+  <img src="assets/ram_sita_vivaj.png" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img" style="object-fit: contain;">
+
+
+            <p style="font-size: 0.85rem; color: #a88242; margin-top: 10px; font-family: var(--font-serif); letter-spacing: 2px;">
+              ॥ मांगलिक परिणय संस्कार — दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. 227, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — 843331॥
+            </p>
+          </footer>
+
+        </article>
+
+        <!-- BOTTOM SCROLL ROD -->
+        <footer class="scroll-rod rod-bottom">
+          <div class="rod-finial">
+            <div class="hanging-tassel tassel-left">
+              <div class="tassel-cord"></div>
+              <div class="tassel-ball"></div>
+              <div class="tassel-fringes"></div>
             </div>
           </div>
-
-          <!-- CONNECTOR -->
-          <div class="couple-connector">
-            <div class="connector-circle">संग</div>
+          <div style="flex: 1; text-align: center;">
+            <span style="font-size: 0.8rem; letter-spacing: 5px; color: #503102; font-weight: 700;">卐 शुभं भवतु कल्याणम् 卐</span>
           </div>
-
-          <!-- GROOM CARD -->
-          <div class="person-card groom-card">
-            <span class="person-tag" data-i18n="groomTag">वर</span>
-            <h3 class="person-name gold-foil-text">चि. निखिल कुमार झा</h3>
-            
-            <div class="lineage-details">
-              <div class="lineage-row">
-                <span class="lineage-title" data-i18n="sonOf">सुपुत्र —</span>
-                <span class="lineage-names">श्री शंकर झा एवं श्रीमती सुनयना देवी</span>
-              </div>
-              <div class="lineage-row">
-                <span class="lineage-title" data-i18n="grandSonOf">सुपौत्र —</span>
-                <span class="lineage-names">स्वर्गीय श्री गोपीरमण झा एवं स्वर्गीय श्रीमती भालेश्वरी देवी</span>
-              </div>
+          <div class="rod-finial">
+            <div class="hanging-tassel tassel-right">
+              <div class="tassel-cord"></div>
+              <div class="tassel-ball"></div>
+              <div class="tassel-fringes"></div>
             </div>
           </div>
-        </section>
-
-        <!-- Cordial Welcome Note -->
-        <section class="cordial-invitation-box">
-          <p class="cordial-text" data-i18n="cordialMessage">
-            आप सभी सपरिवार सादर आमंत्रित हैं। नवयुगल को अपना स्नेह एवं शुभाशीष प्रदान कर इस मंगलमय अवसर की शोभा बढ़ाएँ।
-          </p>
-        </section>
-
-        <!-- ====================================================================
-             3. Live Countdown to Wedding
-             ==================================================================== -->
-        <section class="countdown-section" id="muhurat">
-          <h3 class="countdown-title gold-foil-text" data-i18n="countdownTitle">शुभ लग्न मुहूर्त उल्टी गिनती</h3>
-          <p style="font-size: 0.95rem; color: #eeddbb; margin-bottom: 20px;">
-            २५ नवम्बर २०२६ | सीतामढ़ी (बिहार)
-          </p>
-
-          <div class="countdown-grid">
-            <div class="countdown-unit-card">
-              <span class="countdown-number" id="count-days">00</span>
-              <span class="countdown-label" data-i18n="daysLabel">दिन</span>
-            </div>
-            <div class="countdown-unit-card">
-              <span class="countdown-number" id="count-hours">00</span>
-              <span class="countdown-label" data-i18n="hoursLabel">घंटे</span>
-            </div>
-            <div class="countdown-unit-card">
-              <span class="countdown-number" id="count-mins">00</span>
-              <span class="countdown-label" data-i18n="minsLabel">मिनट</span>
-            </div>
-            <div class="countdown-unit-card">
-              <span class="countdown-number" id="count-secs">00</span>
-              <span class="countdown-label" data-i18n="secsLabel">सेकंड</span>
-            </div>
-          </div>
-        </section>
-
-        <div class="ornate-gold-divider">
-          <div class="divider-line"></div>
-          <svg class="divider-motif" viewBox="0 0 40 40">
-            <path d="M20 0 L25 15 L40 20 L25 25 L20 40 L15 25 L0 20 L15 15 Z" fill="url(#goldGradFill)"/>
-          </svg>
-          <div class="divider-line"></div>
-        </div>
-
-        <!-- ====================================================================
-             4. Auspicious Ceremonies Timeline (मांगलिक कार्यक्रम)
-             ==================================================================== -->
-        <section class="events-section" id="events">
-          <div class="section-title-wrap">
-            <h2 class="section-main-title gold-foil-text shimmer" data-i18n="eventsTitle">मांगलिक कार्यक्रम</h2>
-            <p class="section-subtitle" data-i18n="eventsSub">Auspicious Wedding Ceremonies</p>
-          </div>
-
-          <div class="events-timeline">
-            
-            <!-- 1. SHAGUN CEREMONY -->
-            <article class="event-card">
-              <div class="event-header">
-                <div class="event-name-group">
-                  <div class="event-icon-badge">🥥</div>
-                  <h3 class="event-name gold-foil-text" data-i18n="shagunTitle">शगुन समारोह</h3>
-                </div>
-                <div class="event-date-badge">
-                  <span>📅</span>
-                  <span data-i18n="shagunDate">२२ नवम्बर २०२६ (रविवार)</span>
-                </div>
-              </div>
-
-              <div class="event-body">
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="shagunTimeTitle">शुभ समय :</p>
-                    <p data-i18n="shagunTimeVal">दोपहर १२:०० बजे से</p>
-                  </div>
-                </div>
-
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="shagunVenueTitle">स्थान :</p>
-                    <p data-i18n="shagunVenueVal">ग्राम एवं डाकघर — नवादा, बहेरा, दरभंगा, बिहार — ८४७२०१</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="event-actions-group">
-                <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('shagun')">
-                  <span>📅</span>
-                  <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
-                </button>
-                <a class="event-action-btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Nawada+Bahera+Darbhanga+Bihar+847201" target="_blank" rel="noopener">
-                  <span>📍</span>
-                  <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- 2. HALDI & MEHNDI CEREMONY -->
-            <article class="event-card">
-              <div class="event-header">
-                <div class="event-name-group">
-                  <div class="event-icon-badge">🌿</div>
-                  <div>
-                    <h3 class="event-name gold-foil-text" data-i18n="haldiTitle">हल्दी एवं मेहंदी कार्यक्रम</h3>
-                    <span class="event-theme-tag theme-haldi">Theme: पीला एवं हरियाली (Yellow & Green)</span>
-                  </div>
-                </div>
-                <div class="event-date-badge">
-                  <span>📅</span>
-                  <span data-i18n="haldiDate">२३ नवम्बर २०२६ (सोमवार)</span>
-                </div>
-              </div>
-
-              <div class="event-body">
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="haldiTimeTitle">शुभ समय :</p>
-                    <p data-i18n="haldiTimeVal">हल्दी: प्रातः १०:०० बजे | मेहंदी: सायं ०५:०० बजे</p>
-                  </div>
-                </div>
-
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="haldiVenueTitle">स्थान :</p>
-                    <p data-i18n="haldiVenueVal">दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. २२७, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — ८४३३३१</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="event-actions-group">
-                <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('haldi')">
-                  <span>📅</span>
-                  <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
-                </button>
-                <a class="event-action-btn btn-maps" href="https://www.google.com/maps/place/Shrikhandi+Bhittha,+Shrikhandi+Bhitta+Pashchimi,+Bihar+843331/@26.6193799,85.7774903,85a,75y,279.02h,95.41t/data=!3m7!1e1!3m5!1sE30Nu1DeyrFC0dfrQAG0Gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.410045049314249%26panoid%3DE30Nu1DeyrFC0dfrQAG0Gg%26yaw%3D279.0185035318523!7i16384!8i8192!4m14!1m7!3m6!1s0x39ec45d723f53b13:0x681b4d90a947397c!2sIndo-Nepal+Border+Gate,+Bhithamore!8m2!3d26.6330269!4d85.7736208!16s%2Fg%2F11rsvhbwz2!3m5!1s0x39ec44b9f1b740ad:0xc84c4564ee59b77!8m2!3d26.6252235!4d85.7743536!16s%2Fg%2F1hc37trgm!5m1!1e2?entry=ttu&amp;g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
-                  <span>📍</span>
-                  <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- 3. GRAND WEDDING CEREMONY (SHUBH VIVAH) -->
-            <article class="event-card" style="border-width: 2px; border-color: #ffd700;">
-              <div class="event-header">
-                <div class="event-name-group">
-                  <div class="event-icon-badge" style="background: radial-gradient(circle, #850f24 0%, #3a040e 100%);">🪔</div>
-                  <div>
-                    <h3 class="event-name gold-foil-text shimmer" data-i18n="vivahTitle">शुभ विवाह समारोह</h3>
-                    <span class="event-theme-tag theme-vivah">The Grand Wedding Night</span>
-                  </div>
-                </div>
-                <div class="event-date-badge" style="border-color: #ffd700;">
-                  <span>📅</span>
-                  <span data-i18n="vivahDate">२५ नवम्बर २०२६ (बुधवार)</span>
-                </div>
-              </div>
-
-              <div class="event-body">
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="vivahTimeTitle">शुभ मुहूर्त :</p>
-                    <p data-i18n="vivahTimeVal">बारात आगमन: सायं ०७:०० बजे | जयमाला: रात्रि ०८:३० बजे | शुभ लग्न: रात्रि ११:१५ बजे</p>
-                  </div>
-                </div>
-
-                <div class="event-info-row">
-                  <svg class="event-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9C5 14.2 12 22 12 22C12 22 19 14.2 19 9C19 5.1 15.9 2 12 2ZM12 11.5C10.6 11.5 9.5 10.4 9.5 9C9.5 7.6 10.6 6.5 12 6.5C13.4 6.5 14.5 7.6 14.5 9C14.5 10.4 13.4 11.5 12 11.5Z"/></svg>
-                  <div class="event-info-content">
-                    <p class="event-info-title" data-i18n="vivahVenueTitle">स्थान :</p>
-                    <p data-i18n="vivahVenueVal">दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. २२७, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — ८४३३३१</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="event-actions-group">
-                <button class="event-action-btn btn-calendar" onclick="addToGoogleCalendar('vivah')">
-                  <span>📅</span>
-                  <span data-i18n="btnAddToCal">कैलेंडर में जोड़ें</span>
-                </button>
-                <a class="event-action-btn btn-maps" href="https://www.google.com/maps/place/Shrikhandi+Bhittha,+Shrikhandi+Bhitta+Pashchimi,+Bihar+843331/@26.6193799,85.7774903,85a,75y,279.02h,95.41t/data=!3m7!1e1!3m5!1sE30Nu1DeyrFC0dfrQAG0Gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.410045049314249%26panoid%3DE30Nu1DeyrFC0dfrQAG0Gg%26yaw%3D279.0185035318523!7i16384!8i8192!4m14!1m7!3m6!1s0x39ec45d723f53b13:0x681b4d90a947397c!2sIndo-Nepal+Border+Gate,+Bhithamore!8m2!3d26.6330269!4d85.7736208!16s%2Fg%2F11rsvhbwz2!3m5!1s0x39ec44b9f1b740ad:0xc84c4564ee59b77!8m2!3d26.6252235!4d85.7743536!16s%2Fg%2F1hc37trgm!5m1!1e2?entry=ttu&amp;g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
-                  <span>📍</span>
-                  <span data-i18n="btnMaps">गूगल मैप्स दिशा-निर्देश</span>
-                </a>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-        <!-- ====================================================================
-             5. Closing Cordial Note & Family Signature
-             ==================================================================== -->
-        <section class="family-closing-box">
-          <p class="closing-respect-message" data-i18n="closingMessage">
-            आपकी गरिमामयी उपस्थिति एवं शुभाशीष हमारे लिए अमूल्य होंगे।
-          </p>
-          <h3 class="closing-family-signature gold-foil-text shimmer" data-i18n="closingFamily">
-            सादर — समस्त झा परिवार
-          </h3>
-
-          <div style="margin-top: 25px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <button class="action-btn-gold" id="btn-view-scroll">
-              <span>📜</span>
-              <span data-i18n="btnOriginalScroll">मूल पत्रिका देखें</span>
-            </button>
-            <button class="action-btn-gold" onclick="shareOnWhatsApp()">
-              <span>💬</span>
-              <span data-i18n="btnShareWhatsApp">व्हाट्सएप पर शेयर करें</span>
-            </button>
-            <button class="action-btn-gold" id="btn-shower-flowers">
-              <span data-i18n="btnPushpaShower">पुष्प वर्षा करें 🌸</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ====================================================================
-             6. Interactive Digital Blessings Wall (शुभाशीष दीवार)
-             ==================================================================== -->
-        <section class="blessings-wall-section" id="blessings-wall">
-          <div class="section-title-wrap">
-            <h2 class="section-main-title gold-foil-text" data-i18n="blessingWallTitle">शुभाशीष एवं मंगलकामनाएं</h2>
-            <p class="section-subtitle" data-i18n="blessingWallSub">नवदंपति के लिए अपने पवित्र शुभाशीष प्रेषित करें</p>
-          </div>
-
-          <!-- Blessing Input Form -->
-          <form class="blessing-form-container" id="blessing-form">
-            <div class="form-input-group">
-              <label class="form-label" for="blessing-author-input">आपका नाम एवं संबंध (Your Name & Relation) :</label>
-              <input type="text" class="form-input" id="blessing-author-input" placeholder="उदा. सुरेश झा (चाचा जी, पटना)" required>
-            </div>
-
-            <div class="form-input-group">
-              <label class="form-label" for="blessing-text-input">आपका शुभाशीष संदेश (Blessing Message) :</label>
-              <textarea class="form-textarea" id="blessing-text-input" rows="3" placeholder="नवदंपति के सुखद दांपत्य जीवन हेतु अपनी मंगलकामनाएं लिखें..." required></textarea>
-            </div>
-
-            <label class="form-label">शगुन प्रतीक चुनें (Choose Shagun Token) :</label>
-            <div class="shagun-tokens-selector">
-              <button type="button" class="shagun-token-btn active" data-badge="🌸">🌸 पुष्प वर्षा</button>
-              <button type="button" class="shagun-token-btn" data-badge="🪔">🪔 मंगल दीप</button>
-              <button type="button" class="shagun-token-btn" data-badge="🥥">🥥 शुभ शगुन</button>
-              <button type="button" class="shagun-token-btn" data-badge="📿">📿 शुभाशीष</button>
-            </div>
-
-            <button type="submit" class="action-btn-gold" style="width: 100%; justify-content: center; padding: 12px;">
-              <span>🙏</span>
-              <span>शुभाशीष भेजें / Send Blessings</span>
-            </button>
-          </form>
-
-          <!-- Dynamic Blessings Wall Display -->
-          <div class="blessings-grid" id="blessings-list">
-            <!-- Dynamically populated by js/script.js -->
-          </div>
-        </section>
-
-        <!-- ====================================================================
-             7. Bottom Royal Procession Silhouette (Baraat & Rath)
-             ==================================================================== -->
-        <footer class="royal-procession-footer">
-          <!-- Intricately Detailed Golden Procession (Baraat / Rath / Horses / Spire) -->
-          
-<img src="assets/ram_sita_vivaj.png" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img" style="object-fit: contain;">
-
-
-          <p style="font-size: 0.85rem; color: #a88242; margin-top: 10px; font-family: var(--font-serif); letter-spacing: 2px;">
-            ॥ मांगलिक परिणय संस्कार — दक्षिणवारी टोला, हनुमान मंदिर के निकट, एन.एच. 227, श्रीखंडी भिट्ठा, सुरसंड, जिला सीतामढ़ी, बिहार — 843331॥
-          </p>
         </footer>
 
-      </article>
-
-      <!-- BOTTOM SCROLL ROD -->
-      <footer class="scroll-rod rod-bottom">
-        <div class="rod-finial">
-          <div class="hanging-tassel tassel-left">
-            <div class="tassel-cord"></div>
-            <div class="tassel-ball"></div>
-            <div class="tassel-fringes"></div>
-          </div>
-        </div>
-        <div style="flex: 1; text-align: center;">
-          <span style="font-size: 0.8rem; letter-spacing: 5px; color: #503102; font-weight: 700;">卐 शुभं भवतु कल्याणम् 卐</span>
-        </div>
-        <div class="rod-finial">
-          <div class="hanging-tassel tassel-right">
-            <div class="tassel-cord"></div>
-            <div class="tassel-ball"></div>
-            <div class="tassel-fringes"></div>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-  </main>
-
-  <!-- ========================================================================
-       MODAL 1: Original Velvet Patrika Viewer (High-Res Image Lightbox)
-       ======================================================================== -->
-  <div class="modal-backdrop" id="modal-original-scroll">
-    <div class="modal-content-box original-scroll-preview">
-      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
-      <h3 class="gold-foil-text" style="font-size: 1.5rem; margin-bottom: 15px;">॥ मूल निमंत्रण पत्रिका (Original Patrika) ॥</h3>
-      <img src="assets/original-scroll.jpg" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img">
-      <p style="font-size: 0.85rem; color: #d8c29d; margin-top: 10px;">
-        शाही मखमली निमंत्रण पत्रिका — समस्त झा परिवार
-      </p>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       MODAL 2: Interactive RSVP Form Modal
-       ======================================================================== -->
-  <div class="modal-backdrop" id="modal-rsvp">
-    <div class="modal-content-box">
-      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
-      <div style="text-align: center; margin-bottom: 20px;">
-        <span style="font-size: 2.2rem;">✉</span>
-        <h3 class="gold-foil-text" style="font-size: 1.8rem; margin: 6px 0;">आर.एस.वी.पी / RSVP</h3>
-        <p style="font-size: 0.9rem; color: #f0d8b4;">अपनी गरिमामयी उपस्थिति की सूचना प्रेषित करें</p>
       </div>
+    </main>
 
-      <form id="rsvp-form">
-        <div class="form-input-group">
-          <label class="form-label" for="rsvp-name">आपका शुभ नाम (Full Name) :</label>
-          <input type="text" class="form-input" id="rsvp-name" placeholder="उदा. श्री राजेश कुमार झा" required>
-        </div>
-
-        <div class="form-input-group">
-          <label class="form-label" for="rsvp-phone">दूरभाष / व्हाट्सएप नंबर (Phone / WhatsApp) :</label>
-          <input type="tel" class="form-input" id="rsvp-phone" placeholder="+91 98765 43210" required>
-        </div>
-
-        <div class="form-input-group">
-          <label class="form-label" for="rsvp-guests">उपस्थित सदस्यों की कुल संख्या (Number of Guests) :</label>
-          <select class="form-input" id="rsvp-guests" style="background: #1e0308; color: #fff;">
-            <option value="1">1 सदस्य (1 Member)</option>
-            <option value="2" selected>2 सदस्य (2 Members)</option>
-            <option value="3">3 सदस्य (3 Members)</option>
-            <option value="4">4 सदस्य (4 Members)</option>
-            <option value="5+">5+ सपरिवार (Whole Family)</option>
-          </select>
-        </div>
-
-        <div class="form-input-group">
-          <label class="form-label">आप किस कार्यक्रम में सम्मिलित होंगे? :</label>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; color: #eeddbb; margin-top: 6px;">
-            <label><input type="checkbox" checked> २२ नवम्बर — शगुन समारोह (दरभंगा)</label>
-            <label><input type="checkbox" checked> २३ नवम्बर — हल्दी एवं मेहंदी (सीतामढ़ी)</label>
-            <label><input type="checkbox" checked> २५ नवम्बर — शुभ विवाह समारोह (सीतामढ़ी)</label>
-          </div>
-        </div>
-
-        <button type="submit" class="action-btn-gold" style="width: 100%; justify-content: center; padding: 13px; font-size: 1rem; margin-top: 15px;">
-          <span>✓</span>
-          <span>उपस्थिति दर्ज करें / Confirm Attendance</span>
-        </button>
-      </form>
+    <!-- ========================================================================
+        MODAL 1: Original Velvet Patrika Viewer (High-Res Image Lightbox)
+        ======================================================================== -->
+    <div class="modal-backdrop" id="modal-original-scroll">
+      <div class="modal-content-box original-scroll-preview">
+        <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+        <h3 class="gold-foil-text" style="font-size: 1.5rem; margin-bottom: 15px;">॥ मूल निमंत्रण पत्रिका (Original Patrika) ॥</h3>
+        <img src="assets/original-scroll.jpg" alt="Asha and Nikhil Wedding Invitation Original Velvet Scroll" class="original-scroll-img">
+        <p style="font-size: 0.85rem; color: #d8c29d; margin-top: 10px;">
+          शाही मखमली निमंत्रण पत्रिका — समस्त झा परिवार
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Background Celebration Loop Music (Vivah Geet) -->
-  <audio id="wedding-bg-music" loop preload="auto" autoplay>
-    <source src="assets/vivah_geet.mp3" type="audio/mpeg">
-    <source src="assets/vivah_geet.mpeg" type="audio/mpeg">
-  </audio>
-  <script>
-    (function() {
-      try {
-        var a = document.getElementById('wedding-bg-music');
-        if (a) {
-          a.volume = 0.75;
-          var p = a.play();
-          if (p !== undefined) {
-            p.catch(function(e) {});
+    <!-- ========================================================================
+        MODAL 2: Interactive RSVP Form Modal
+        ======================================================================== -->
+    <div class="modal-backdrop" id="modal-rsvp">
+      <div class="modal-content-box">
+        <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span style="font-size: 2.2rem;">✉</span>
+          <h3 class="gold-foil-text" style="font-size: 1.8rem; margin: 6px 0;">आर.एस.वी.पी / RSVP</h3>
+          <p style="font-size: 0.9rem; color: #f0d8b4;">अपनी गरिमामयी उपस्थिति की सूचना प्रेषित करें</p>
+        </div>
+
+        <form id="rsvp-form">
+          <div class="form-input-group">
+            <label class="form-label" for="rsvp-name">आपका शुभ नाम (Full Name) :</label>
+            <input type="text" class="form-input" id="rsvp-name" placeholder="उदा. श्री राजेश कुमार झा" required>
+          </div>
+
+          <div class="form-input-group">
+            <label class="form-label" for="rsvp-phone">दूरभाष / व्हाट्सएप नंबर (Phone / WhatsApp) :</label>
+            <input type="tel" class="form-input" id="rsvp-phone" placeholder="+91 98765 43210" required>
+          </div>
+
+          <div class="form-input-group">
+            <label class="form-label" for="rsvp-guests">उपस्थित सदस्यों की कुल संख्या (Number of Guests) :</label>
+            <select class="form-input" id="rsvp-guests" style="background: #1e0308; color: #fff;">
+              <option value="1">1 सदस्य (1 Member)</option>
+              <option value="2" selected>2 सदस्य (2 Members)</option>
+              <option value="3">3 सदस्य (3 Members)</option>
+              <option value="4">4 सदस्य (4 Members)</option>
+              <option value="5+">5+ सपरिवार (Whole Family)</option>
+            </select>
+          </div>
+
+          <div class="form-input-group">
+            <label class="form-label">आप किस कार्यक्रम में सम्मिलित होंगे? :</label>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; color: #eeddbb; margin-top: 6px;">
+              <label><input type="checkbox" checked> २२ नवम्बर — शगुन समारोह (दरभंगा)</label>
+              <label><input type="checkbox" checked> २३ नवम्बर — हल्दी एवं मेहंदी (सीतामढ़ी)</label>
+              <label><input type="checkbox" checked> २५ नवम्बर — शुभ विवाह समारोह (सीतामढ़ी)</label>
+            </div>
+          </div>
+
+          <button type="submit" class="action-btn-gold" style="width: 100%; justify-content: center; padding: 13px; font-size: 1rem; margin-top: 15px;">
+            <span>✓</span>
+            <span>उपस्थिति दर्ज करें / Confirm Attendance</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Background Celebration Loop Music (Vivah Geet) -->
+    <audio id="wedding-bg-music" loop preload="auto" autoplay>
+      <source src="assets/vivah_geet.mp3" type="audio/mpeg">
+      <source src="assets/vivah_geet.mpeg" type="audio/mpeg">
+    </audio>
+    <script>
+      (function() {
+        try {
+          var a = document.getElementById('wedding-bg-music');
+          if (a) {
+            a.volume = 0.75;
+            var p = a.play();
+            if (p !== undefined) {
+              p.catch(function(e) {});
+            }
           }
-        }
-      } catch(e) {}
-    })();
-  </script>
+        } catch(e) {}
+      })();
+    </script>
 
-  <!-- Scripts -->
-  <script src="js/audio.js"></script>
-  <script src="js/particles.js"></script>
-  <script src="js/script.js"></script>
-</body>
-</html>
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+  </html>
